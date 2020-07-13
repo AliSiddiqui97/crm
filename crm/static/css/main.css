@@ -1,0 +1,24 @@
+
+.logo{
+    height: 100px;
+    
+}
+.productImage{
+    height: 300px;
+    width: auto;
+}
+
+body{
+    background-color: #ebeff5;
+}
+#total-orders{
+    background-color: #7abecc;
+}
+
+#orders-delivered{
+    background-color: #7ab0cc;
+}
+ 
+#orders-pending{
+    background-color: #7CD1C0;
+}

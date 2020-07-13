@@ -1,0 +1,64 @@
+
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+{% load static%}
+<div class='container mx-auto'>
+
+    <h1> Products</h1>
+    <hr>
+    <div class='row border bg-light'>
+        <div class='col-sm-10 col-md-4 col-lg-4  border p-0 m-0  mx-auto' >
+            <img class=' productImage border m-0  w-100  p-0 bg-primary mx-auto' src = '{% static "images/logo.png"%}'>
+        </div>
+        <div class='col-sm-10 col-md-8 border w-100  '>
+            <h3>Product Name</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure odit pariatur magni asperiores in itaque. Illum deleniti quam nemo dicta tempora dolor exercitationem possimus labore beatae. Iste qui tempore quidem!</p>
+            <div class="card  " >
+                <ul class="list-group list-group-flush">
+                  <!-- PRICE -->
+                    <li class="list-group-item ">                     
+                        <div class='row'>
+                            <div class="text-center col-4 ">
+                                <b>Price</b>
+                            </div>
+                            <div class='col-auto '>
+                                $100
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <!-- CATEGORY -->
+                    <li class="list-group-item ">                      
+                        <div class='row'>
+                            <div class="text-center col-4 ">
+                                <b>Category</b>
+                            </div>
+                            <div class='col-auto '>
+                                Food
+                            </div>
+                        </div>
+                        
+                    </li>
+                    <!-- TAGS -->
+                    <li class="list-group-item ">                  
+                        <div class='row'>
+                            <div class="text-center col-4 ">
+                                <b>TAGS</b>
+                            </div>
+                            <div class='col-auto '>
+                                tag1,tag2,tag3,tag4
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+              </div>
+        </div>
+
+    </div>
+
+    
+
+</div>
+{% endblock %}
