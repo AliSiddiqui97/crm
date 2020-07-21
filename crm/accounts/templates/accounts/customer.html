@@ -10,10 +10,10 @@
     <hr>
     <div class='row border bg-light'>
         <div class='col-sm-10 col-md-4 col-lg-4  border p-0 m-0  mx-auto' >
-            <img class=' productImage border m-0  w-100  p-0 bg-primary mx-auto' src = '{% static "images/logo.png"%}'>
+            <img class=' productImage border m-0  w-100  p-0 bg-primary mx-auto' src = '{{Customer.profile_pic.url}}'>
         </div>
         <div class='col-sm-10 col-md-8 border w-100  '>
-            <h3> Muhammed Ali Siddiqui</h3>
+            <h3> {{Customer.name}}</h3>
              <div class="card  " >
                 <ul class="list-group list-group-flush">
                   <!-- Email -->
@@ -23,7 +23,7 @@
                                 <b>Email</b>
                             </div>
                             <div class='col-auto '>
-                                alisiddiqui@gmail.com
+                                {{Customer.email}}
                             </div>
                         </div>
                         
@@ -35,7 +35,7 @@
                                 <b>Phone</b>
                             </div>
                             <div class='col-auto '>
-                                03341895266
+                                {{Customer.phone}}
                             </div>
                         </div>
                         
@@ -47,7 +47,7 @@
                                 <b>Total </b>
                             </div>
                             <div class='col-auto '>
-                                5
+                                {{total_orders}}
                             </div>
                         </div>
                     </li>
@@ -58,7 +58,7 @@
                                 <b>Pending </b>
                             </div>
                             <div class='col-auto '>
-                                5
+                                {{pending}}
                             </div>
                         </div>
                     </li>
@@ -69,7 +69,7 @@
                                 <b>Delivered </b>
                             </div>
                             <div class='col-auto '>
-                                0
+                                {{delivered}}
                             </div>
                         </div>
                     </li>

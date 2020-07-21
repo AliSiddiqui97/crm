@@ -8,10 +8,11 @@
 {% include 'accounts/status.html' %}
 </div>
 <div class=' row text-center justify-content-center mx-auto'>
-
+  {% if admin == '1' %}
     <div class='col-sm-12  col-lg-4  bg-light border '>
         <h3>Customers </h3>
         <hr >
+        
         <button type="button" class="btn btn-primary w-100">Add Customer</button>
         <table class="table table-hover table-responsive">
             <thead>
@@ -25,18 +26,19 @@
               </tr>
             </thead>
             <tbody>
-          
+              {% for customer in Customers %}
               <tr>
                 
-                <td ><a href='' >0</a></td>
-                <td >Ali</td>
-                <td >03341984422</td>
+                <td ><a href='{% url "home_customer" customer.id %}' >{{customer.id}}</a></td>
+                <td >{{customer.name}}</td>
+                <td >{{customer.phone}}</td>
              </tr>
-              
+              {% endfor %}
             </tbody>
           </table>
 
     </div>
+    {% endif %}
 
     <div class= 'col-sm-12 col-lg-7  bg-light border'>
         <h3>Last 5 Orders</h3>
@@ -53,21 +55,15 @@
               </tr>
             </thead>
             <tbody>
-           
+              {% for order in Orders%}
               <tr>
-                <td >BBQ SAUCE</td>
-                <td >22/4/2019</td>
-                <td >Pending</td>
+                <td >{{order.product.name}}</td>
+                <td >{{order.date_created}}</td>
+                <td >{{order.status}}</td>
                 <td><a class="btn btn-warning" href="" role="button">Update</a></td>
                 <td><a class="btn btn-danger" href="" role="button">Delete</a></td>
              </tr>
-             <tr>
-              <td >BBQ SAUCE</td>
-              <td >22/4/2019</td>
-              <td >Pending</td>
-              <td><a class="btn btn-warning" href="" role="button">Update</a></td>
-              <td><a class="btn btn-danger" href="" role="button">Delete</a></td>
-           </tr>
+             {% endfor %}
                 
             </tbody>
           </table>

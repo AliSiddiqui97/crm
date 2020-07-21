@@ -70,6 +70,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL ='accounts.Customer'
+
 WSGI_APPLICATION = 'crm.wsgi.application'
 
 

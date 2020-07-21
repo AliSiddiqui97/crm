@@ -7,13 +7,14 @@
 
     <h1> Products</h1>
     <hr>
+    {% for product in Products%}
     <div class='row border bg-light'>
         <div class='col-sm-10 col-md-4 col-lg-4  border p-0 m-0  mx-auto' >
-            <img class=' productImage border m-0  w-100  p-0 bg-primary mx-auto' src = '{% static "images/logo.png"%}'>
+            <img class=' productImage border m-0  w-100  p-0 bg-primary mx-auto' src = '{{product.image.url}}'>
         </div>
         <div class='col-sm-10 col-md-8 border w-100  '>
-            <h3>Product Name</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure odit pariatur magni asperiores in itaque. Illum deleniti quam nemo dicta tempora dolor exercitationem possimus labore beatae. Iste qui tempore quidem!</p>
+            <h3>{{product.name}}</h3>
+            <p>{{product.desciption}}</p>
             <div class="card  " >
                 <ul class="list-group list-group-flush">
                   <!-- PRICE -->
@@ -23,7 +24,7 @@
                                 <b>Price</b>
                             </div>
                             <div class='col-auto '>
-                                $100
+                                ${{product.price}}
                             </div>
                         </div>
                         
@@ -35,7 +36,7 @@
                                 <b>Category</b>
                             </div>
                             <div class='col-auto '>
-                                Food
+                                {{product.category}}
                             </div>
                         </div>
                         
@@ -47,7 +48,7 @@
                                 <b>TAGS</b>
                             </div>
                             <div class='col-auto '>
-                                tag1,tag2,tag3,tag4
+                                {{product.tags}}
                             </div>
                         </div>
                         
@@ -57,6 +58,7 @@
         </div>
 
     </div>
+    {% endfor %}
 
     
 
